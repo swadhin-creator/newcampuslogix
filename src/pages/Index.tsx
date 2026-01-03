@@ -36,15 +36,15 @@ const Index = () => {
             <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Building2 className="h-5 w-5 text-primary" />
-                <span>100+ Partner Institutions</span>
+                <span>Institution Collab</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-5 w-5 text-primary" />
-                <span>50,000+ Students Trained</span>
+                <span>Student Centric</span>
               </div>
               <div className="flex items-center gap-2">
                 <Award className="h-5 w-5 text-primary" />
-                <span>85% Placement Rate</span>
+                <span>Placement Ready</span>
               </div>
             </div>
           </div>
