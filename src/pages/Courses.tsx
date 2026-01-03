@@ -21,7 +21,7 @@ import {
   Truck,
   Calculator,
 } from "lucide-react";
-import growthChartImage from "@assets/stock_images/business_growth_char_348a8091.jpg";
+import growthChartImage from "@assets/stock_images/academic_education_g_68807f28.jpg";
 
 const Courses = () => {
   const { openLeadForm } = useLeadForm();
