@@ -326,13 +326,13 @@ const Index = () => {
             {[
               {
                 quote: "CampusLogix transformed our placement outcomes. Their practical approach to training gave our students the edge they needed.",
-                author: "Dr. Ramesh Kumar",
-                role: "Principal, XYZ Engineering College",
+                author: "Dr. Rajendra Prasad Sharma",
+                role: "Principal, Sri Ramakrishna Institute of Technology",
               },
               {
                 quote: "The trainers were exceptional—they understood our students and delivered content in an engaging, practical manner.",
-                author: "Prof. Sunita Sharma",
-                role: "HOD Computer Science, ABC University",
+                author: "Prof. Lakshmi Narayanan",
+                role: "HOD Computer Science, PSG College of Technology",
               },
             ].map((testimonial, index) => (
               <div key={index} className="rounded-xl border border-border bg-card p-6 shadow-card">

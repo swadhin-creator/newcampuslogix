@@ -13,11 +13,13 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
 import LeadFormModal from "./components/LeadFormModal";
+import useScrollToTop from "./hooks/useScrollToTop";
 
 const queryClient = new QueryClient();
 
 const AppContent = () => {
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
+  useScrollToTop();
 
   return (
     <div className="flex min-h-screen flex-col">
