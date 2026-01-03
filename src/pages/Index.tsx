@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 import { Link } from "react-router-dom";
 import { GraduationCap, Target, Users, Briefcase, CheckCircle2, ArrowRight, BookOpen, TrendingUp, Award, Building2, Clock, BarChart3, Lightbulb, ChevronDown, ChevronUp, Star, Quote } from "lucide-react";
-import collegeStudentsImage from "@assets/stock_images/college_students_hal_5d8a36cb.jpg";
+import collegeStudentsImage from "@assets/stock_images/students_standing_ha_51cf7c2d.jpg";
 import { useState } from "react";
 const Index = () => {
   const {
