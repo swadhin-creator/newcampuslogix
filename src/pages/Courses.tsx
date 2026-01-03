@@ -14,7 +14,14 @@ import {
   Brain,
   Shield,
   MessageSquare,
+  Megaphone,
+  LineChart,
+  TrendingUp,
+  Briefcase,
+  Truck,
+  Calculator,
 } from "lucide-react";
+import growthChartImage from "@assets/stock_images/business_growth_char_348a8091.jpg";
 
 const Courses = () => {
   const { openLeadForm } = useLeadForm();
@@ -41,6 +48,27 @@ const Courses = () => {
       description: "Understand cloud infrastructure, containerization, and continuous integration/deployment.",
       topics: ["AWS/Azure Fundamentals", "Docker & Kubernetes", "CI/CD Pipelines", "Infrastructure as Code", "Monitoring & Logging"],
     },
+    {
+      icon: Megaphone,
+      title: "Digital Marketing",
+      duration: "80 Hours",
+      description: "Master digital marketing strategies including SEO, SEM, social media marketing, and analytics.",
+      topics: ["SEO & SEM", "Social Media Marketing", "Content Marketing", "Email Marketing", "Analytics & Reporting"],
+    },
+    {
+      icon: LineChart,
+      title: "Business Analytics with AI",
+      duration: "100 Hours",
+      description: "Leverage AI and machine learning for data-driven business decisions and insights.",
+      topics: ["Business Intelligence", "Predictive Analytics", "AI for Business", "Data Storytelling", "Decision Making"],
+    },
+    {
+      icon: TrendingUp,
+      title: "New Age Data Analytics",
+      duration: "90 Hours",
+      description: "Modern data analytics techniques using cutting-edge tools and technologies.",
+      topics: ["Advanced SQL", "Power BI & Tableau", "Python Analytics", "Big Data Basics", "Real-time Analytics"],
+    },
   ];
 
   const specializedPrograms = [
@@ -64,6 +92,34 @@ const Courses = () => {
       duration: "40 Hours",
       description: "Develop critical thinking, communication, and professional skills for career success.",
       topics: ["Quantitative Aptitude", "Logical Reasoning", "Verbal Ability", "Communication Skills", "Interview Preparation"],
+    },
+    {
+      icon: Briefcase,
+      title: "AI for Business",
+      duration: "80 Hours",
+      description: "Learn how to apply AI solutions to solve real business problems and drive innovation.",
+      topics: ["AI Strategy", "Automation with AI", "AI Ethics", "Use Case Development", "ROI Analysis"],
+    },
+    {
+      icon: Code,
+      title: "AI for Software Engineering",
+      duration: "100 Hours",
+      description: "Integrate AI capabilities into software development and enhance engineering workflows.",
+      topics: ["AI-Assisted Coding", "ML Integration", "AI Testing", "Prompt Engineering", "AI DevOps"],
+    },
+    {
+      icon: Truck,
+      title: "Logistics and Supply Chain Management",
+      duration: "80 Hours",
+      description: "Master modern supply chain operations, logistics optimization, and inventory management.",
+      topics: ["Supply Chain Fundamentals", "Inventory Management", "Logistics Planning", "Procurement", "Distribution Networks"],
+    },
+    {
+      icon: Calculator,
+      title: "Financial Accounting",
+      duration: "60 Hours",
+      description: "Build expertise in financial accounting principles, reporting, and analysis.",
+      topics: ["Accounting Principles", "Financial Statements", "Cost Accounting", "Taxation Basics", "Financial Analysis"],
     },
   ];
 
@@ -116,11 +172,11 @@ const Courses = () => {
               Our flagship programs covering essential technology domains with comprehensive curriculum and hands-on training.
             </p>
           </div>
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
             {corePrograms.map((program, index) => (
-              <div key={index} className="flex flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover">
+              <div key={index} className="flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-core-program-${index}`}>
                 <div className="p-6">
-                  <div className="flex items-start justify-between">
+                  <div className="flex items-start justify-between gap-2">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                       <program.icon className="h-6 w-6 text-primary" />
                     </div>
@@ -158,11 +214,11 @@ const Courses = () => {
               Focused programs for emerging technologies and essential professional skills.
             </p>
           </div>
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
             {specializedPrograms.map((program, index) => (
-              <div key={index} className="flex flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover">
+              <div key={index} className="flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-specialized-program-${index}`}>
                 <div className="p-6">
-                  <div className="flex items-start justify-between">
+                  <div className="flex items-start justify-between gap-2">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                       <program.icon className="h-6 w-6 text-primary" />
                     </div>
@@ -232,10 +288,13 @@ const Courses = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5">
-                <div className="flex h-full items-center justify-center">
-                  <BarChart3 className="h-32 w-32 text-primary/30" />
-                </div>
+              <div className="aspect-square overflow-hidden rounded-2xl">
+                <img 
+                  src={growthChartImage} 
+                  alt="Business growth and progress chart" 
+                  className="h-full w-full object-cover"
+                  data-testid="img-our-approach"
+                />
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 import { Link } from "react-router-dom";
 import { GraduationCap, Target, Users, Briefcase, CheckCircle2, ArrowRight, BookOpen, TrendingUp, Award, Building2, Clock, BarChart3, Lightbulb, ChevronDown, ChevronUp, Star, Quote } from "lucide-react";
+import collegeStudentsImage from "@assets/stock_images/college_students_wit_7c08d8cc.jpg";
 import { useState } from "react";
 const Index = () => {
   const {
@@ -104,12 +105,14 @@ const Index = () => {
               </ul>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5">
-                <div className="flex h-full items-center justify-center">
-                  <GraduationCap className="h-32 w-32 text-primary/30" />
-                </div>
+              <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+                <img 
+                  src={collegeStudentsImage} 
+                  alt="College students with books" 
+                  className="h-full w-full object-cover"
+                  data-testid="img-about-campuslogix"
+                />
               </div>
-              
             </div>
           </div>
         </div>
