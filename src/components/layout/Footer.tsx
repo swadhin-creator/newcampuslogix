@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -55,10 +55,6 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-muted-foreground">
                 <Mail className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                 <span>info@campuslogix.in</span>
-              </li>
-              <li className="flex items-start gap-3 text-muted-foreground">
-                <Phone className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                <span>+91 98765 43210</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
