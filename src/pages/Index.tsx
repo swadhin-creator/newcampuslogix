@@ -92,12 +92,10 @@ const Index = () => {
               <span className="text-sm font-medium uppercase tracking-wider text-primary">About CampusLogix</span>
               <h2 className="heading-2 mt-2 text-foreground">Your Partner in Building Industry-Ready Talent</h2>
               <p className="body-text mt-4 text-muted-foreground">
-                CampusLogix is an ed-tech company dedicated to bridging the employability gap in Indian higher education. We work directly with colleges and universities to deliver industry-aligned training programs that complement academic curricula.
+                We work directly with colleges and universities to deliver industry-aligned training programs that complement academic curricula.
               </p>
-              <p className="body-text mt-4 text-muted-foreground">
-                Our programs are designed by industry practitioners and delivered by experienced trainers who understand both academic constraints and corporate expectations.
-              </p>
-              <ul className="mt-6 space-y-3">
+              <p className="body-text mt-6 font-semibold text-foreground">We Specialise in:</p>
+              <ul className="mt-4 space-y-3">
                 {["Customized programs aligned to your curriculum", "Experienced industry trainers", "Hands-on project-based learning", "Regular progress tracking and reporting"].map((item, index) => <li key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                     <span className="text-muted-foreground">{item}</span>
@@ -148,8 +146,7 @@ const Index = () => {
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary text-xl font-bold text-primary-foreground">
                   {item.step}
                 </div>
-                {index < 3 && <div className="absolute left-1/2 top-8 hidden h-px w-full bg-border md:block" />}
-                <h3 className="heading-3 mt-4 text-foreground">{item.title}</h3>
+                                <h3 className="heading-3 mt-4 text-foreground">{item.title}</h3>
                 <p className="body-text mt-2 text-muted-foreground">{item.description}</p>
               </div>)}
           </div>
@@ -184,8 +181,8 @@ const Index = () => {
             description: "Regular assessments and detailed progress reports."
           }, {
             icon: Award,
-            title: "Certification",
-            description: "Industry-recognized certificates for program completers."
+            title: "Hybrid Pedagogy",
+            description: "Online and Offline Training as per the custom requirements."
           }, {
             icon: Clock,
             title: "Flexible Scheduling",
@@ -213,7 +210,7 @@ const Index = () => {
             </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {["Full Stack Web Development", "Data Science & Analytics", "Cloud Computing & DevOps", "Artificial Intelligence & ML", "Cybersecurity Fundamentals", "Aptitude & Soft Skills"].map((program, index) => <div key={index} className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-card">
+            {["Full Stack Web Development", "Data Science & Analytics", "Cloud Computing & DevOps", "Artificial Intelligence & ML", "Business Analytics", "Aptitude & Soft Skills"].map((program, index) => <div key={index} className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-card">
                 <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary">
                   <GraduationCap className="h-5 w-5 text-primary-foreground" />
                 </div>
@@ -231,48 +228,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Choose Section */}
-      <section className="section-padding">
-        <div className="container-main">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="heading-2 text-foreground">Why Choose CampusLogix</h2>
-          </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[{
-            value: "100+",
-            label: "Partner Institutions"
-          }, {
-            value: "50,000+",
-            label: "Students Trained"
-          }, {
-            value: "85%",
-            label: "Placement Rate"
-          }, {
-            value: "4.8/5",
-            label: "Satisfaction Score"
-          }].map((stat, index) => <div key={index} className="text-center">
-                <p className="text-4xl font-bold text-primary">{stat.value}</p>
-                <p className="mt-2 text-muted-foreground">{stat.label}</p>
-              </div>)}
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[{
-            title: "Industry Partnerships",
-            description: "Direct connections with hiring companies for placement support."
-          }, {
-            title: "Proven Methodology",
-            description: "Refined training approach developed over years of experience."
-          }, {
-            title: "End-to-End Support",
-            description: "From planning to placement, we're with you every step."
-          }].map((item, index) => <div key={index} className="rounded-xl border border-border bg-card p-6 text-center shadow-card">
-                <h3 className="heading-3 text-foreground">{item.title}</h3>
-                <p className="body-text mt-2 text-muted-foreground">{item.description}</p>
-              </div>)}
-          </div>
-        </div>
-      </section>
-
       {/* Ideal For */}
       <section className="bg-section-alt section-padding">
         <div className="container-main">
@@ -283,7 +238,7 @@ const Index = () => {
             </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {["Engineering Colleges", "Universities", "Polytechnics", "Arts & Science Colleges"].map((type, index) => <div key={index} className="flex items-center justify-center gap-3 rounded-xl border border-border bg-card p-6 shadow-card">
+            {["Engineering Colleges", "Universities", "B-Schools", "Arts & Science Colleges"].map((type, index) => <div key={index} className="flex items-center justify-center gap-3 rounded-xl border border-border bg-card p-6 shadow-card">
                 <Building2 className="h-6 w-6 text-primary" />
                 <span className="font-medium text-foreground">{type}</span>
               </div>)}
@@ -295,19 +250,35 @@ const Index = () => {
       <section className="section-padding">
         <div className="container-main">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="heading-2 text-foreground">What Educators Say</h2>
+            <h2 className="heading-2 text-foreground">What Students Say</h2>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {[{
-            quote: "CampusLogix transformed our placement outcomes. Their practical approach to training gave our students the edge they needed.",
-            author: "Dr. Rajendra Prasad Sharma",
-            role: "Principal, Sri Ramakrishna Institute of Technology"
+            quote: "The training was incredibly practical. I learned skills that directly helped me crack my first job interview.",
+            author: "Priya Sharma",
+            location: "Bengaluru",
+            rating: 5
           }, {
-            quote: "The trainers were exceptional—they understood our students and delivered content in an engaging, practical manner.",
-            author: "Prof. Lakshmi Narayanan",
-            role: "HOD Computer Science, PSG College of Technology"
+            quote: "The trainers made complex concepts easy to understand. The hands-on projects gave me real confidence.",
+            author: "Rahul Verma",
+            location: "Chennai",
+            rating: 5
+          }, {
+            quote: "I went from having no coding experience to building my own web applications. CampusLogix changed my career trajectory.",
+            author: "Ananya Reddy",
+            location: "Hyderabad",
+            rating: 5
+          }, {
+            quote: "The placement support was exceptional. They helped me prepare for interviews and land my dream job.",
+            author: "Vikram Patel",
+            location: "Mumbai",
+            rating: 5
           }].map((testimonial, index) => <div key={index} className="rounded-xl border border-border bg-card p-6 shadow-card">
-                <Quote className="h-8 w-8 text-primary/20" />
+                <div className="flex gap-1">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                  ))}
+                </div>
                 <p className="mt-4 text-lg italic text-foreground">"{testimonial.quote}"</p>
                 <div className="mt-4 flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
@@ -315,7 +286,7 @@ const Index = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
                   </div>
                 </div>
               </div>)}
