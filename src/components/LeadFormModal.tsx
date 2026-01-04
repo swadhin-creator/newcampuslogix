@@ -52,6 +52,7 @@ const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
           phone: formData.phone,
           studentStrength: formData.studentStrength,
           timeline: formData.startTimeline,
+          message: formData.message,
         },
       });
 
