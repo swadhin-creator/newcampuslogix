@@ -279,7 +279,7 @@ const Courses = () => {
                   },
                   {
                     title: "Completion Certificates",
-                    description: "Industry-recognized certificates for students who successfully complete the program.",
+                    description: "Institute issued certificates for students who successfully complete the program.",
                   },
                 ].map((item, index) => (
                   <div key={index} className="flex gap-4">
