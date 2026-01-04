@@ -81,14 +81,16 @@ app.get("/api/consultations/export", async (req, res) => {
 });
 
 const isDev = process.env.NODE_ENV !== "production";
-const PORT = isDev ? 3001 : 5000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : (isDev ? 3001 : 8080);
 
 if (!isDev) {
   const distPath = path.resolve(__dirname, "../dist");
   app.use(express.static(distPath));
-  app.get("/*", (req, res) => {
+  app.use((req, res, next) => {
     if (!req.path.startsWith("/api")) {
       res.sendFile(path.join(distPath, "index.html"));
+    } else {
+      next();
     }
   });
 }
