@@ -22,7 +22,7 @@ const Index = () => {
               <span className="text-primary">Job-Ready Professionals</span>
             </h1>
             <p className="body-large mt-6 text-muted-foreground">
-              CampusLogix partners with colleges and universities across India to deliver cutting-edge skill development programs that bridge the gap between academics and industry requirements.
+              Partner with us to deliver cutting-edge skill development programs to your students and bridge the gap between academics and industry requirements.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button size="lg" onClick={openLeadForm}>
