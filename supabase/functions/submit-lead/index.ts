@@ -8,7 +8,8 @@ const corsHeaders = {
 interface LeadData {
   name: string;
   designation: string;
-  institution: string;
+  institutionName: string;
+  institutionType: string;
   email: string;
   phone: string;
   studentStrength: string;
