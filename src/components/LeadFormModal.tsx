@@ -47,7 +47,8 @@ const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
         body: {
           name: formData.name,
           designation: formData.designation,
-          institution: `${formData.institutionName} (${formData.institutionType})`,
+          institutionName: formData.institutionName,
+          institutionType: formData.institutionType,
           email: formData.email,
           phone: formData.phone,
           studentStrength: formData.studentStrength,
