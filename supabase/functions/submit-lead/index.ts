@@ -42,10 +42,26 @@ serve(async (req) => {
       body: JSON.stringify(leadData),
     });
 
+    const responseText = await response.text();
+    console.log('Webhook response status:', response.status);
+    console.log('Webhook response body (first 800 chars):', responseText?.slice?.(0, 800) ?? responseText);
+
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Google Sheets webhook error:', errorText);
+      console.error('Google Sheets webhook error:', responseText);
       throw new Error(`Webhook failed: ${response.status}`);
+    }
+
+    // Apps Script can return 200 even on failure; validate the JSON payload.
+    let parsed: any = null;
+    try {
+      parsed = JSON.parse(responseText);
+    } catch {
+      // Non-JSON responses are considered failures (often HTML error pages)
+    }
+
+    if (!parsed || parsed.success !== true) {
+      const reason = parsed?.error ? String(parsed.error) : 'Invalid response from Apps Script (expected JSON {success:true}).';
+      throw new Error(`Webhook rejected: ${reason}`);
     }
 
     console.log('Lead submitted successfully');
