@@ -13,6 +13,7 @@ interface LeadData {
   phone: string;
   studentStrength: string;
   timeline: string;
+  message?: string;
 }
 
 serve(async (req) => {
