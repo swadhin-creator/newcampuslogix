@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Shield } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface LeadFormModalProps {
   isOpen: boolean;
@@ -41,27 +42,48 @@ const LeadFormModal = ({ isOpen, onClose }: LeadFormModalProps) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-lead', {
+        body: {
+          name: formData.name,
+          designation: formData.designation,
+          institution: `${formData.institutionName} (${formData.institutionType})`,
+          email: formData.email,
+          phone: formData.phone,
+          studentStrength: formData.studentStrength,
+          timeline: formData.startTimeline,
+        },
+      });
 
-    toast({
-      title: "Thank you for your interest!",
-      description: "Our team will get back to you within 24 hours.",
-    });
+      if (error) throw error;
 
-    setFormData({
-      name: "",
-      designation: "",
-      institutionName: "",
-      institutionType: "",
-      email: "",
-      phone: "",
-      studentStrength: "",
-      startTimeline: "",
-      message: "",
-    });
-    setIsSubmitting(false);
-    onClose();
+      toast({
+        title: "Thank you for your interest!",
+        description: "Our team will get back to you within 24 hours.",
+      });
+
+      setFormData({
+        name: "",
+        designation: "",
+        institutionName: "",
+        institutionType: "",
+        email: "",
+        phone: "",
+        studentStrength: "",
+        startTimeline: "",
+        message: "",
+      });
+      onClose();
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
