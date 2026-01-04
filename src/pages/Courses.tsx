@@ -22,7 +22,7 @@ import {
   Calculator,
 } from "lucide-react";
 import growthChartImage from "@assets/stock_images/simple_upward_trendi_4e5c594f.jpg";
-import aiStampImage from "@assets/ChatGPT_Image_Jan_4,_2026_at_10_34_28_PM_1767546298357.png";
+import aiStampImage from "@assets/Enhanced_AI_illustration_1767546781764.png";
 
 const Courses = () => {
   const { openLeadForm } = useLeadForm();
@@ -182,7 +182,7 @@ const Courses = () => {
                       <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                         <program.icon className="h-6 w-6 text-primary" />
                       </div>
-                      <img src={aiStampImage} alt="AI Powered" className="h-10 w-10 object-contain contrast-125" />
+                      <img src={aiStampImage} alt="AI Powered" className="h-14 w-14 object-contain contrast-125" />
                     </div>
                     <span className="rounded-full bg-section-alt px-3 py-1 text-sm font-medium text-muted-foreground">
                       {program.duration}
@@ -227,7 +227,7 @@ const Courses = () => {
                       <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                         <program.icon className="h-6 w-6 text-primary" />
                       </div>
-                      <img src={aiStampImage} alt="AI Powered" className="h-10 w-10 object-contain contrast-125" />
+                      <img src={aiStampImage} alt="AI Powered" className="h-14 w-14 object-contain contrast-125" />
                     </div>
                     <span className="rounded-full bg-section-alt px-3 py-1 text-sm font-medium text-muted-foreground">
                       {program.duration}
