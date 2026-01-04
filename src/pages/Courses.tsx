@@ -22,6 +22,7 @@ import {
   Calculator,
 } from "lucide-react";
 import growthChartImage from "@assets/stock_images/simple_upward_trendi_4e5c594f.jpg";
+import aiStampImage from "@assets/ChatGPT_Image_Jan_4,_2026_at_10_34_28_PM_1767546298357.png";
 
 const Courses = () => {
   const { openLeadForm } = useLeadForm();
@@ -133,7 +134,7 @@ const Courses = () => {
               Industry-Aligned Curriculum
             </span>
             <h1 className="heading-1 text-foreground">
-              Skill Development Programs That{" "}
+              AI Powered Skill Development Programs That{" "}
               <span className="text-primary">Drive Results</span>
             </h1>
             <p className="body-large mt-6 text-muted-foreground">
@@ -174,7 +175,8 @@ const Courses = () => {
           </div>
           <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
             {corePrograms.map((program, index) => (
-              <div key={index} className="flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-core-program-${index}`}>
+              <div key={index} className="relative flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-core-program-${index}`}>
+                <img src={aiStampImage} alt="AI Powered" className="absolute right-2 top-2 h-16 w-16 object-contain opacity-80" />
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
@@ -216,7 +218,8 @@ const Courses = () => {
           </div>
           <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
             {specializedPrograms.map((program, index) => (
-              <div key={index} className="flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-specialized-program-${index}`}>
+              <div key={index} className="relative flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-specialized-program-${index}`}>
+                <img src={aiStampImage} alt="AI Powered" className="absolute right-2 top-2 h-16 w-16 object-contain opacity-80" />
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
