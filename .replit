@@ -6,9 +6,10 @@ expertMode = true
 channel = "stable-25_05"
 
 [deployment]
-deploymentTarget = "static"
+deploymentTarget = "autoscale"
 build = ["npm", "run", "build"]
 publicDir = "dist"
+run = ["node", "--import", "tsx", "server/index.ts"]
 
 [workflows]
 runButton = "Project"
@@ -45,3 +46,8 @@ externalPort = 5000
 [[ports]]
 localPort = 8080
 externalPort = 80
+
+[userenv]
+
+[userenv.production]
+NODE_ENV = "production"

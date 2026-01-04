@@ -1,8 +1,13 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 import { db } from "./db";
 import { consultationRequests, insertConsultationRequestSchema } from "../shared/schema";
 import { desc } from "drizzle-orm";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(cors());
@@ -75,7 +80,19 @@ app.get("/api/consultations/export", async (req, res) => {
   }
 });
 
-const PORT = 3001;
+const isDev = process.env.NODE_ENV !== "production";
+const PORT = isDev ? 3001 : 5000;
+
+if (!isDev) {
+  const distPath = path.resolve(__dirname, "../dist");
+  app.use(express.static(distPath));
+  app.get("*", (req, res) => {
+    if (!req.path.startsWith("/api")) {
+      res.sendFile(path.join(distPath, "index.html"));
+    }
+  });
+}
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
