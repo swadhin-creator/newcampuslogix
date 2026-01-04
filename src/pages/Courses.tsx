@@ -175,18 +175,20 @@ const Courses = () => {
           </div>
           <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
             {corePrograms.map((program, index) => (
-              <div key={index} className="relative flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-core-program-${index}`}>
-                <img src={aiStampImage} alt="AI Powered" className="absolute right-2 top-2 h-16 w-16 object-contain opacity-80" />
+              <div key={index} className="flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-core-program-${index}`}>
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-2">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <program.icon className="h-6 w-6 text-primary" />
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                        <program.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <img src={aiStampImage} alt="AI Powered" className="h-10 w-10 object-contain contrast-125" />
                     </div>
                     <span className="rounded-full bg-section-alt px-3 py-1 text-sm font-medium text-muted-foreground">
                       {program.duration}
                     </span>
                   </div>
-                  <h3 className="heading-3 mt-4 text-foreground">{program.title}</h3>
+                  <h3 className="heading-3 mt-4 text-foreground">AI Powered {program.title}</h3>
                   <p className="body-text mt-2 text-muted-foreground">{program.description}</p>
                 </div>
                 <div className="mt-auto border-t border-border p-6">
@@ -218,18 +220,20 @@ const Courses = () => {
           </div>
           <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
             {specializedPrograms.map((program, index) => (
-              <div key={index} className="relative flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-specialized-program-${index}`}>
-                <img src={aiStampImage} alt="AI Powered" className="absolute right-2 top-2 h-16 w-16 object-contain opacity-80" />
+              <div key={index} className="flex w-80 flex-shrink-0 flex-col rounded-xl border border-border bg-card shadow-card transition-shadow hover:shadow-card-hover" data-testid={`card-specialized-program-${index}`}>
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-2">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <program.icon className="h-6 w-6 text-primary" />
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                        <program.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <img src={aiStampImage} alt="AI Powered" className="h-10 w-10 object-contain contrast-125" />
                     </div>
                     <span className="rounded-full bg-section-alt px-3 py-1 text-sm font-medium text-muted-foreground">
                       {program.duration}
                     </span>
                   </div>
-                  <h3 className="heading-3 mt-4 text-foreground">{program.title}</h3>
+                  <h3 className="heading-3 mt-4 text-foreground">AI Powered {program.title}</h3>
                   <p className="body-text mt-2 text-muted-foreground">{program.description}</p>
                 </div>
                 <div className="mt-auto border-t border-border p-6">
