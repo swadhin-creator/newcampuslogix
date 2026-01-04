@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock, Shield } from "lucide-react";
+import { Mail, MapPin, Clock, Shield } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -96,18 +96,6 @@ const Contact = () => {
                     <p className="font-medium text-foreground">Email</p>
                     <a href="mailto:info@campuslogix.in" className="text-muted-foreground hover:text-primary">
                       info@campuslogix.in
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Phone</p>
-                    <a href="tel:+919876543210" className="text-muted-foreground hover:text-primary">
-                      +91 98765 43210
                     </a>
                   </div>
                 </div>
