@@ -36,17 +36,21 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/consultation", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const googleScriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+      
+      if (googleScriptUrl) {
+        const response = await fetch(googleScriptUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            timestamp: new Date().toISOString(),
+          }),
+        });
 
-      const result = await response.json();
-
-      if (result.success) {
         toast({
           title: "Message sent successfully!",
           description: "Our team will get back to you within 24 hours.",
@@ -64,11 +68,40 @@ const Contact = () => {
           message: "",
         });
       } else {
-        toast({
-          title: "Error",
-          description: "There was an issue submitting your form. Please try again.",
-          variant: "destructive",
+        const response = await fetch("/api/consultation", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         });
+
+        const result = await response.json();
+
+        if (result.success) {
+          toast({
+            title: "Message sent successfully!",
+            description: "Our team will get back to you within 24 hours.",
+          });
+
+          setFormData({
+            name: "",
+            designation: "",
+            institutionName: "",
+            institutionType: "",
+            email: "",
+            phone: "",
+            studentStrength: "",
+            startTimeline: "",
+            message: "",
+          });
+        } else {
+          toast({
+            title: "Error",
+            description: "There was an issue submitting your form. Please try again.",
+            variant: "destructive",
+          });
+        }
       }
     } catch (error) {
       toast({
