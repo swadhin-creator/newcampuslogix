@@ -35,24 +35,49 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("/api/consultation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    toast({
-      title: "Message sent successfully!",
-      description: "Our team will get back to you within 24 hours.",
-    });
+      const result = await response.json();
 
-    setFormData({
-      name: "",
-      designation: "",
-      institutionName: "",
-      institutionType: "",
-      email: "",
-      phone: "",
-      studentStrength: "",
-      startTimeline: "",
-      message: "",
-    });
+      if (result.success) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Our team will get back to you within 24 hours.",
+        });
+
+        setFormData({
+          name: "",
+          designation: "",
+          institutionName: "",
+          institutionType: "",
+          email: "",
+          phone: "",
+          studentStrength: "",
+          startTimeline: "",
+          message: "",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "There was an issue submitting your form. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an issue submitting your form. Please try again.",
+        variant: "destructive",
+      });
+    }
+
     setIsSubmitting(false);
   };
 
